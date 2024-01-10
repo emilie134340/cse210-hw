@@ -27,13 +27,9 @@ class Program
         {
             letter = "D";
         }
-        else if (grade < 60)
-        {
-            letter = "F";
-        }
         else
         {
-            Console.WriteLine("Please enter a valid integer between 0 and 100.");
+            letter = "F";
         }
 
         Console.WriteLine($"Your grade is: {letter}");
