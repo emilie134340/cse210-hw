@@ -11,7 +11,7 @@ class Program
         // string magicValue = Console.ReadLine();
         // int magicNumber = int.Parse(magicValue);
 
-        int guess = -1;
+        int guess = -1; // -1 because this value can't match the random value
 
         while (magicNumber != guess)
         {
