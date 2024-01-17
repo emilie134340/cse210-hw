@@ -15,10 +15,9 @@ class Program
 
         while (magicNumber != guess)
         {
-            // why didn't this work? the commented out part here? 
             // Console.Write("What is your guess? ");
             // string guessValue = Console.ReadLine();
-            // int guess = int.Parse(guessValue);
+            // guess = int.Parse(guessValue);
             Console.Write("What is your guess? ");
             guess = int.Parse(Console.ReadLine());
             if (magicNumber > guess)
