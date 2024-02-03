@@ -1,30 +1,38 @@
-namespace Develop02;
+namespace Journal;
+using System;
 
 public class Entry
 {
     // Create entries and their necessary information
-    // response : string
-    // prompt : string
-    // date : string
-    public string Response;
-    public string Prompt;
-    public string Date;
+    public string response;
+    public string prompt;
+    public string date;
 
-    // Format the entries so they can be exported
-    // AddEntry(prompt : string, response : string, date : string)
-
-
-    // Export the entry to Journal
-    // ExportEntry() : string
-    // public string ExportEntry()
-    // {
-
-    // }
-
-    // Display the entries
-    // Display() : void
-    public void Display()
+    // CONSTRUCTOR FOR ENTRY
+    public Entry(string response, string prompt, string date)
     {
+        this.response = response;
+        this.prompt = prompt;
+        this.date = date;
+    }
 
+    public Entry(string import)
+    {
+        var entries = import.Split("~|~");
+        this.date = entries[0];
+        this.prompt = entries[1];
+        this.response = entries[2];
+    }
+
+    // This is how the prompt and response will be formatted in the text file.
+    public string Export()
+    {
+        return $"{date}~|~{prompt}~|~{response}";
+    }
+
+    // DisplayString() : string
+    public string DisplayString()
+    {
+        return $"Date: {date} - Prompt: {prompt} \n{response}";
     }
 }
