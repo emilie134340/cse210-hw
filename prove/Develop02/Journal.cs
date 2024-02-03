@@ -6,7 +6,6 @@ using System.Runtime.InteropServices; // this just got added on its own??
 public class Journal
 {
     // Create a list to store journal entries
-    Entry entry;
     public List<Entry> entries;
     public Journal()
     {
@@ -51,9 +50,37 @@ public class Journal
 
     public void AddEntry()
     {
-        // DISPLAY PROMPT AND RANDOMIZED THEM
-        Console.WriteLine($"Enter your response to {entry.prompt}. ");
-        // HANDLE DATE
-        // RESPONSE
+        // Create a list of prompts
+        List<string> prompts = new List<string>
+        {
+            "Who was the most interesting person I interacted with today?",
+            "What was the best part of my day?",
+            "How did I see the hand of the Lord in my life today?",
+            "What was the strongest emotion I felt today?",
+            "If I had one thing I could do over today, what would it be?",
+            "What accomplishment are you the most proud of today?",
+            "What is something you're grateful for today?",
+            "Decribe a momement that made you smile or laugh today.",
+            "What goal or task did you make progress on today?",
+            "In what ways did you show kindness today?",
+            "What is something new you've learned today?"
+        };
+
+        // Use Random class to randomly select a prompt
+        Random random = new Random();
+        int randomIndex = random.Next(prompts.Count);
+        string selectedPrompt = prompts[randomIndex];
+        Console.Clear();
+        Console.WriteLine($"Enter your response to: \n{selectedPrompt} ");
+        string response = Console.ReadLine();
+
+        // Get the current date and time
+        //string date = DateTime.Now.ToString("MM/DD/YYYY");
+        DateTime theCurrentTime = DateTime.Now;
+        string date = theCurrentTime.ToShortDateString();
+
+        // Create a new Entry and add it to the entries list
+        Entry newEntry = new Entry(response, selectedPrompt, date);
+        entries.Add(newEntry);
     }
 }

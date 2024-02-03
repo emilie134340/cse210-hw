@@ -27,7 +27,7 @@ public class Entry
     // This is how the prompt and response will be formatted in the text file.
     public string Export()
     {
-        return $"{date}~|~{prompt}~|~{response}";
+        return $"{date} ~|~ { prompt} ~|~ {response}";
     }
 
     // DisplayString() : string
