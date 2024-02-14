@@ -4,10 +4,10 @@ using System;
 public class Reference
 {
     // make variables to store components of the Reference
-    string book;
-    int chapter;
-    int verseStart;
-    int verseEnd;
+    private string book;
+    private int chapter;
+    private int verseStart;
+    private int verseEnd;
 
     // Constructor for reference
     public Reference(string book, int chapter, int verseStart, int verseEnd)

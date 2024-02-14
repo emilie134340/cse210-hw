@@ -13,20 +13,26 @@ class Program
 
         Scripture scripture = new Scripture(reference, text);
         
-        do
+        while (true)
         {
             Console.Clear();
             scripture.Display();
-            Console.WriteLine("\nPress Enter to continue or type 'quit' to exit.");
-            string input = Console.ReadLine().ToLower();
-            if (input == "quit")
-                break;
-            else if (input == "")
-                scripture.HideWords();
+            if (!scripture.AreAllWordsHidden())
+            {
+                Console.WriteLine("\nPress Enter to continue or type 'quit' to finish: ");
+                string input = Console.ReadLine().ToLower();
+                if (input == "quit")
+                    break;
+                else if (input != "")
+                    Console.WriteLine("Invalid input. Press Enter to continue or type 'quit' to finish: ");
+            }
             else
-                Console.WriteLine("Invalid input. Press Enter to continue or type 'quit' to exit.");
-        } while (scripture.IsAnyWordHidden());
-
-        Console.WriteLine("All words are hidden. Program ended.");
+            {
+                    Console.WriteLine("All words are hidden :)");
+                    break; // Exiting the Main method will end the program
+            }
+            scripture.HideWords();
+        } 
+        
     }
 }
