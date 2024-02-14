@@ -28,11 +28,11 @@ class Program
             }
             else
             {
-                    Console.WriteLine("All words are hidden :)");
+                    Console.WriteLine("\nAll words are hidden :)");
                     break; // Exiting the Main method will end the program
             }
             scripture.HideWords();
         } 
-        
+
     }
 }
