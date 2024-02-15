@@ -4,8 +4,8 @@ using System;
 public class Word
 {
     // create variables to store the individual word and a boolean to know if the word is hidden or not
-    string word;
-    bool hidden;
+    private string word;
+    private bool hidden;
 
     // Constructor to initialize the word and hidden status
     public Word(string word)
