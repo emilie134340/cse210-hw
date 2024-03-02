@@ -21,12 +21,23 @@ class ListingActivity : Activity
     {
         Random random = new Random();
         int index = random.Next(prompts.Length);
-        Console.WriteLine(prompts[index]);
+        Console.WriteLine("List as many responses you can to the following prompt: ");
+        Console.WriteLine($"----- {prompts[index]} -----");
         DateTime endTime = DateTime.Now.AddSeconds(duration);
-        Console.WriteLine("Start listing...");
+
+        Console.Write("You may begin in: 3");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+        Console.Write("2");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+        Console.Write("1");
+        Thread.Sleep(1000);
+        Console.Write("\b \b\n");
         // until the user-specified duration is reached, let the user list items. Count the items listed.
         while (DateTime.Now < endTime)
-        {
+        {   
+            Console.Write("> ");
             string item = Console.ReadLine();
             items.Add(item);
         }

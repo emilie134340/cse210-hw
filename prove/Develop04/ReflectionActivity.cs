@@ -38,8 +38,15 @@ class ReflectionActivity : Activity
         Console.Clear();
 
         Console.WriteLine("Use each of the following questions to expound on this experience.");
-        Console.WriteLine($"Starting soon... \b");
-        ShowSpinner();
+        Console.Write("You may begin in: 3");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+        Console.Write("2");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+        Console.Write("1");
+        Thread.Sleep(1000);
+        Console.Write("\b \b\n");
         Console.Clear();
 
         DateTime startTime = DateTime.Now;
@@ -52,6 +59,5 @@ class ReflectionActivity : Activity
             ShowSpinner(); 
         }
 
-        Console.WriteLine("\nWell done!");
     }
 }

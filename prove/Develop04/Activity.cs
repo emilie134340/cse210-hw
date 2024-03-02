@@ -45,6 +45,8 @@ abstract class Activity
         ShowSpinner();
         PerformActivity();
         ShowSpinner();
+        Console.WriteLine("Well done!");
+        ShowSpinner();
         Console.WriteLine($"You have completed the {activityName} activity for {duration} seconds. Good job!");
     }
 
@@ -66,7 +68,6 @@ abstract class Activity
 
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(4); // 4 seconds
-
         int i = 0;
         while (DateTime.Now < endTime)
         {
@@ -74,12 +75,10 @@ abstract class Activity
             Thread.Sleep(500); // each spinner phase lasts half a second
             Console.Write("\b \b");
             i++;
-
             if (i >= animation.Count)
             {
                 i = 0;
             }
-
         }
         Console.WriteLine();
     }
