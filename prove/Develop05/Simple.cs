@@ -20,15 +20,29 @@ class Simple : Goal
     }
 
     // if the goal has been completed, display
-    public void IsComplete()
+    public override bool IsComplete(List<Goal> goals)
     {
-        if (isComplete == true)
+        return isComplete;
+    }
+
+    // Override ToString to display the goal's information and completion status
+    public override string ToString()
+    {
+        string status = isComplete ? "[X]" : "[ ]";
+        return $"{status} {name}: {description} - {points} points";
+    }
+
+    public override int RecordEvent(List<Goal> goals)
+    {
+        if (!isComplete)
         {
-            Console.Write("The goal has been completed, congratulations! "); // add points here??? [x]
+            isComplete = true; // Mark the simple goal as complete
+            return points; // Return the point value associated with recording the event
         }
         else
         {
-            Console.Write("This goal still needs to be completed."); // to earn ___ points ?? [ ]
+            // If the goal is already complete, return 0 points
+            return 0;
         }
     }
 }

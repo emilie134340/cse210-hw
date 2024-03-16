@@ -17,4 +17,14 @@ class Eternal : Goal
         Eternal eternalGoal = new Eternal("Eternal Goal", eternalName, eternalDescription, eternalPoints);
         goals.Add(eternalGoal);
     }
+
+    public override bool IsComplete(List<Goal> goals)
+    {
+        // Eternal goals are never completed
+        return false;
+    }
+    public override int RecordEvent(List<Goal> goals)
+    {
+        return points;
+    }
 }

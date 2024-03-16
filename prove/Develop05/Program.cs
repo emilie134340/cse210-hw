@@ -5,49 +5,54 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Menu Options:");
-        Console.WriteLine("1. Create New Goal");
-        Console.WriteLine("2. List Goals");
-        Console.WriteLine("3. Save Goals");
-        Console.WriteLine("4. Load Goals");
-        Console.WriteLine("5. Record Event");
-        Console.WriteLine("6. Quit");
-        Console.Write("Select a choice from the menu: ");
-
-        int choice = int.Parse(Console.ReadLine());
+        int choice = 0;
         List<Goal> goals = new List<Goal>();
-
-        switch(choice)
+        while (choice != 6)
         {
-            // create goals
-            case 1:
-            Goal.GoalMenu();
-            break;
+            Console.WriteLine("Menu Options:");
+            Console.WriteLine("1. Create New Goal");
+            Console.WriteLine("2. List Goals");
+            Console.WriteLine("3. Save Goals");
+            Console.WriteLine("4. Load Goals");
+            Console.WriteLine("5. Record Event");
+            Console.WriteLine("6. Quit");
+            Console.Write("Select a choice from the menu: ");
 
-            // list goals
-            case 2:
-            Goal.ListGoals(goals);
-            break;
+            choice = int.Parse(Console.ReadLine());
 
-            // save goals
-            case 3:
-            Goal.SaveGoal(goals);
-            break;
+            switch(choice)
+            {
+                // create goals
+                case 1:
+                Console.Clear();
+                Goal.GoalMenu();
+                break;
 
-            // load goals
-            case 4:
-            Goal.LoadGoal(goals);
-            break;
+                // list goals
+                case 2:
+                Goal.ListGoals(goals);
+                break;
 
-            // record event (??)
-            case 5:
-            // Goal.RecordEvent();
-            break;
+                // save goals
+                case 3:
+                Goal.SaveGoal(goals);
+                break;
 
-            // exit
-            case 6:
-            Environment.Exit(0);
-            break;
+                // load goals
+                case 4:
+                Goal.LoadGoal(goals);
+                break;
+
+                // record event (??)
+                case 5:
+                //Goal.RecordEvent(goals);
+                break;
+
+                // exit
+                case 6:
+                Environment.Exit(0);
+                break;
+            }
         }
-    }
+    } 
 }
