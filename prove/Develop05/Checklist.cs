@@ -15,7 +15,7 @@ class Checklist : Goal
         this.bonusPoints = bonusPoints;
     }
 
-    public override void NewGoal(List<Goal> goals)
+    public override void NewGoal()
     {
         Console.WriteLine("What is the name of your goal? ");
         string checklistName = Console.ReadLine(); 
@@ -28,7 +28,13 @@ class Checklist : Goal
         Console.WriteLine("What is the bonus for accomplishing it that many times? ");
         int checklistBonusPoints = int.Parse(Console.ReadLine());
         Checklist checklistGoal = new Checklist("Checklist Goal", checklistName, checklistDescription, checklistPoints, checklistTimesToComplete, checklistBonusPoints);
-        goals.Add(checklistGoal);
+        //return checklistGoal;
+        this.type = "Checklist Goal";
+        this.name = checklistName;
+        this.description = checklistDescription;
+        this.points = checklistPoints;
+        this.timesToComplete = checklistTimesToComplete;
+        this.bonusPoints = checklistBonusPoints;
     }
 
     public override bool IsComplete(List<Goal> goals)

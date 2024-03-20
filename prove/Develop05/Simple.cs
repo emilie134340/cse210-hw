@@ -7,7 +7,7 @@ class Simple : Goal
     public Simple(string type, string name, string description, int points) : base(type, name, description, points){}
 
 
-    public override void NewGoal(List<Goal> goals)
+    public override void NewGoal()
     {
         Console.WriteLine("What is the name of your goal? ");
         string simpleName = Console.ReadLine(); 
@@ -15,8 +15,12 @@ class Simple : Goal
         string simpleDescription = Console.ReadLine();
         Console.WriteLine("What is the amount of points associated with this goal? ");
         int simplePoints = int.Parse(Console.ReadLine());
-        Simple simpleGoal = new Simple("Simple Goal", simpleName, simpleDescription, simplePoints);
-        goals.Add(simpleGoal);
+        // Simple simpleGoal = new Simple("Simple Goal", simpleName, simpleDescription, simplePoints);
+        this.type = "Simple Goal";
+        this.name = simpleName;
+        this.description = simpleDescription;
+        this.points = simplePoints;
+        // return simpleGoal;
     }
 
     // if the goal has been completed, display

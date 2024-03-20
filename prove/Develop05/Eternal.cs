@@ -6,7 +6,7 @@ class Eternal : Goal
     public Eternal(string type, string name, string description, int points) : base(type, name, description, points){}
 
 
-    public override void NewGoal(List<Goal> goals)
+    public override void NewGoal()
     {
         Console.WriteLine("What is the name of your goal? ");
         string eternalName = Console.ReadLine(); 
@@ -14,8 +14,11 @@ class Eternal : Goal
         string eternalDescription = Console.ReadLine();
         Console.WriteLine("What is the amount of points associated with this goal? ");
         int eternalPoints = int.Parse(Console.ReadLine());
-        Eternal eternalGoal = new Eternal("Eternal Goal", eternalName, eternalDescription, eternalPoints);
-        goals.Add(eternalGoal);
+        // return ("Eternal Goal", eternalName, eternalDescription, eternalPoints);
+        this.type = "Eternal Goal";
+        this.name = eternalName;
+        this.description = eternalDescription;
+        this.points = eternalPoints;
     }
 
     public override bool IsComplete(List<Goal> goals)
