@@ -45,5 +45,5 @@ abstract class Goal
     public abstract void NewGoal();
     public abstract int RecordEvent(List<Goal> goals); // allow to mark event as complete, add points
 
-    public abstract bool IsComplete(List<Goal> goals); // store if goal is complete
+    public abstract bool IsComplete(); // store if goal is complete
 }

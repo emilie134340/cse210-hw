@@ -37,7 +37,7 @@ class Checklist : Goal
         this.bonusPoints = checklistBonusPoints;
     }
 
-    public override bool IsComplete(List<Goal> goals)
+    public override bool IsComplete()
     {
         // For checklist goals, check if the required number of times for a bonus has been completed
         return timesToComplete >= timesCompleted;
@@ -49,7 +49,7 @@ class Checklist : Goal
         timesCompleted++;
 
         // Check if the goal has been completed the required number of times for a bonus
-        if (IsComplete(goals))
+        if (IsComplete())
         {
             // If so, add bonus points to the total points
             points += bonusPoints;
@@ -63,7 +63,7 @@ class Checklist : Goal
         int index = 1;
         foreach (Goal goal in goals)
         {
-            Console.WriteLine($"{index}. {goal.GetName()} - {(goal.IsComplete(goals) ? "[X]" : "[ ]")} {timesCompleted}/{timesToComplete}");
+            Console.WriteLine($"{index}. {goal.GetName()} - {(goal.IsComplete() ? "[X]" : "[ ]")} {timesCompleted}/{timesToComplete}");
             index++;
         }
 

@@ -24,9 +24,9 @@ class Simple : Goal
     }
 
     // if the goal has been completed, display
-    public override bool IsComplete(List<Goal> goals)
+    public override bool IsComplete()
     {
-        return false;
+        return isComplete = true;
     }
 
     // Override ToString to display the goal's information and completion status
@@ -51,7 +51,7 @@ class Simple : Goal
         int index = 1;
         foreach (Goal goal in goals)
         {
-            Console.WriteLine($"{index}. {goal.GetName()} - {(goal.IsComplete(goals) ? "[X]" : "[ ]")}");
+            Console.WriteLine($"{index}. {goal.GetName()} - {(goal.IsComplete() ? "[X]" : "[ ]")}");
             index++;
         }
 

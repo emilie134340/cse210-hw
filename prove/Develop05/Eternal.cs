@@ -21,7 +21,7 @@ class Eternal : Goal
         this.points = eternalPoints;
     }
 
-    public override bool IsComplete(List<Goal> goals)
+    public override bool IsComplete()
     {
         // Eternal goals are never completed
         return false;
@@ -32,7 +32,7 @@ class Eternal : Goal
         int index = 1;
         foreach (Goal goal in goals)
         {
-            Console.WriteLine($"{index}. {goal.GetName()} - {(goal.IsComplete(goals) ? "[X]" : "[ ]")}");
+            Console.WriteLine($"{index}. {goal.GetName()} - {(goal.IsComplete() ? "[X]" : "[ ]")}");
             index++;
         }
 
