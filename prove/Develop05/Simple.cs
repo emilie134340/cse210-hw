@@ -26,7 +26,7 @@ class Simple : Goal
     // if the goal has been completed, display
     public override bool IsComplete(List<Goal> goals)
     {
-        return isComplete;
+        return false;
     }
 
     // Override ToString to display the goal's information and completion status
@@ -46,7 +46,25 @@ class Simple : Goal
         else
         {
             // If the goal is already complete, return 0 points
-            return 0;
+            //return 0;
+        Console.WriteLine("Select a goal to record an event:");
+        int index = 1;
+        foreach (Goal goal in goals)
+        {
+            Console.WriteLine($"{index}. {goal.GetName()} - {(goal.IsComplete(goals) ? "[X]" : "[ ]")}");
+            index++;
+        }
+
+        Console.Write("Enter the number of the goal: ");
+        int selectedIndex = int.Parse(Console.ReadLine()) - 1;
+
+        Goal selectedGoal = goals[selectedIndex];
+        int pointsEarned = selectedGoal.RecordEvent(goals);
+
+        return pointsEarned; 
+        
+
+        // Show total points
         }
     }
 }

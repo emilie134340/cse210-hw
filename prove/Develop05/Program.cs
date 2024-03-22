@@ -126,11 +126,11 @@ class Program
                 if (goal.GetType() == typeof(Checklist)) // checklist
                 {
                     Checklist checklistGoal = (Checklist)goal; // to use bonus points
-                    outputFile.WriteLine($"{goal.type}:{goal.GetName()},{goal.GetDescription()},{goal.GetPoints()},{checklistGoal.bonusPointsTest}");
+                    outputFile.WriteLine($"{goal.type},{goal.GetName()},{goal.GetDescription()},{goal.GetPoints()},{checklistGoal.bonusPointsTest}");
                 }
                 else // simple or eternal
                 {
-                    outputFile.WriteLine($"{goal.type}:{goal.GetName()},{goal.GetDescription()},{goal.GetPoints()}");
+                    outputFile.WriteLine($"{goal.type},{goal.GetName()},{goal.GetDescription()},{goal.GetPoints()}");
                 }
             }
         }
@@ -168,6 +168,8 @@ class Program
                         goals.Add(new Checklist(type, name, description, points, timesCompleted, bonusPoints));
                         break;
                 }
+
+                Console.WriteLine(goals);
 
                 // display total points at the top
             }

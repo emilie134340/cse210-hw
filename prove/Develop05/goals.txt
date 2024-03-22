@@ -1,4 +1,2 @@
 totalPoints = 
-Eternal Goal:Test eternal,Test eternal description,10
-Simple Goal:test simple,test simple description,100
-Checklist Goal:test checklist,test checklist description,10,100
+Simple Goal,test goal,test goal description,10

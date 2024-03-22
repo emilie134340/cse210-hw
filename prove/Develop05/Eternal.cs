@@ -28,6 +28,22 @@ class Eternal : Goal
     }
     public override int RecordEvent(List<Goal> goals)
     {
-        return points;
+        Console.WriteLine("Select a goal to record an event:");
+        int index = 1;
+        foreach (Goal goal in goals)
+        {
+            Console.WriteLine($"{index}. {goal.GetName()} - {(goal.IsComplete(goals) ? "[X]" : "[ ]")}");
+            index++;
+        }
+
+        Console.Write("Enter the number of the goal: ");
+        int selectedIndex = int.Parse(Console.ReadLine()) - 1;
+
+        Goal selectedGoal = goals[selectedIndex];
+        int pointsEarned = selectedGoal.RecordEvent(goals);
+        return pointsEarned; 
+        
+
+        // Show total points
     }
 }
