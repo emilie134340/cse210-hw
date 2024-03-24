@@ -3,20 +3,29 @@ using System;
 
 class Running : Activity
 {
-    public Running(DateTime date, int length, string type, double distance, double speed, double pace) : base(date, length, type, distance, speed, pace){}
+    private double distance;
 
+    // constructor
+    public Running(DateTime date, string name, int length, double distance) : base(date, name, length)
+    {
+        this.distance = distance;
+    }
+
+    // get distance, speed, pace, and summary for running
     public override double GetDistance()
     {
-        return base.GetDistance();
+        return distance;
     }
-
     public override double GetSpeed()
     {
-        return base.GetSpeed();
+        return distance / (length / 60.0); // Speed in miles per hour
     }
-
     public override double GetPace()
     {
-        return base.GetPace();
+        return length / distance; // Pace in minutes per mile
+    }
+    public override string GetSummary()
+    {
+        return $"{base.GetSummary()} Running ({length} min) - Distance: {distance:F2} miles, Speed: {GetSpeed():F2} mph, Pace: {GetPace():F2} min per mile";
     }
 }

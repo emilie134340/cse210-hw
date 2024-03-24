@@ -4,38 +4,31 @@ using System;
 class Activity 
 {
     protected DateTime date;
+    protected string name;
     protected int length;
-    protected string type;
-    protected double distance;
-    protected double speed;
-    protected double pace;
 
-    public Activity(DateTime date, int length, string type, double distance, double speed, double pace)
+    public Activity(DateTime date, string name, int length)
     {
         this.date = date;
+        this.name = name;
         this.length = length;
-        this.type = type;
-        this.distance = distance;
-        this.speed = speed;
-        this.pace = pace;
     }
 
     // getters for distance, speed, and pace that will be overriden in child classes
     public virtual double GetDistance()
     {
-        return distance;
+        return 0;
     }
     public virtual double GetSpeed()
     {
-        return speed;
+        return 0;
     }
     public virtual double GetPace()
     {
-        return pace;
+        return 0;
     }
-
-    public string GetSummary()
+    public virtual string GetSummary()
     {
-        return $"This is the summary";
+        return $"{date.ToString("dd MMM yyyy")} -";
     }
 }

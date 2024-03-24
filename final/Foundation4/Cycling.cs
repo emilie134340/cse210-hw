@@ -3,20 +3,25 @@ using System;
 
 class Cycling : Activity
 {
-    public Cycling(DateTime date, int length, string type, double distance, double speed, double pace) : base(date, length, type, distance, speed, pace){}
+    private double speed;
 
-    public override double GetDistance()
+    // constructor
+    public Cycling(DateTime date, string name, int length, double speed) : base(date, name, length)
     {
-        return base.GetDistance();
+        this.speed = speed;
     }
 
+    // get speed, pace, and summary for cycling
     public override double GetSpeed()
     {
-        return base.GetSpeed();
+        return speed; // mph
     }
-
     public override double GetPace()
     {
-        return base.GetPace();
+        return 60.0 / speed; // Pace in minutes per mile
+    }
+    public override string GetSummary()
+    {
+        return $"{base.GetSummary()} Cycling ({length} min) - Speed: {speed:F2} mph, Pace: {GetPace():F2} min per mile";
     }
 }
