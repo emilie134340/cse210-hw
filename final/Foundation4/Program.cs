@@ -10,7 +10,7 @@ class Program
             new Running(new DateTime(2024, 3, 03), "Running", 30, 3.0),
             new Running(new DateTime(2024, 3, 12), "Running", 30, 4.8),
             new Cycling(new DateTime(2024, 2, 03), "Cycling", 45, 15),
-            new Swimming(new DateTime(2024, 2, 23), "Swimming", 60, 20)
+            new Swimming(new DateTime(2024, 2, 23), "Swimming", 15, 30)
         };
 
         foreach (var activity in activities)
