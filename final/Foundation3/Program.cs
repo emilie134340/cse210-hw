@@ -13,7 +13,7 @@ class Program
         // Create events
         Event lectureEvent = new Lecture("Lecture on Whales", "A fascinating talk about whales", new DateTime(2024, 3, 25), "10:00 AM", address1, "Dr. Orca", 50);
         Event receptionEvent = new Reception("Whale Reception", "A celebration of whales", new DateTime(2024, 4, 1), "7:00 PM", address2, "rsvp@whale.com");
-        Event outdoorEvent = new Outdoor("Outdoor Whale Watching Event", "Whale watching from a boat", new DateTime(2024, 4, 15), "2:00 PM", address1, "Sunny");
+        Event outdoorEvent = new Outdoor("Outdoor Whale Watching Event", "Whale watching from a boat", new DateTime(2024, 4, 15), "2:00 PM", address3, "Sunny");
 
         // Display marketing messages
         // Lecuture
